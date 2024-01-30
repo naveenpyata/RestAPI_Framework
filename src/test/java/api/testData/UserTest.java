@@ -37,19 +37,19 @@ public class UserTest {
 	@Test(priority=1)
 	public void test_PostUser() {
 
-		Response response = User_End_Points.createUser(userpayload);			
-		response.then().log().all();
+	 Response response = User_End_Points.createUser(userpayload);			
+	 response.then().log().all();
 		
-		 Assert.assertEquals(response.getStatusCode(), 200);
+     Assert.assertEquals(response.getStatusCode(), 200);
 	}
 	
 	@Test(priority=2)
 	public void test_GetUserByName() {
 		
-		Response response = User_End_Points.readUser(this.userpayload.getUsername());				
-		response.then().log().all();
+	 Response response = User_End_Points.readUser(this.userpayload.getUsername());				
+	 response.then().log().all();
 		
-		Assert.assertEquals(response.getStatusCode(), 200);
+	 Assert.assertEquals(response.getStatusCode(), 200);
 		
 	}
 	
