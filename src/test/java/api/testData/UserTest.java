@@ -18,10 +18,9 @@ public class UserTest {
 	@BeforeClass
 	public void setupData() {
 		
-		Faker faker = new Faker();
+	    faker = new Faker();
 		userpayload = new User();
-		
-		
+			
 		userpayload.setId(faker.idNumber().hashCode());
 		userpayload.setUsername(faker.name().fullName());
 		userpayload.setFirstName(faker.name().firstName());
@@ -30,7 +29,7 @@ public class UserTest {
 		userpayload.setPassword(faker.internet().password(5,10));
 		userpayload.setPhone(faker.phoneNumber().cellPhone());
 		userpayload.setUserStatus(0);
-
+		
 	}
 
 		
@@ -82,7 +81,8 @@ public class UserTest {
 		Response responseDelete = User_End_Points.deleteUser(this.userpayload.getUsername());	
 		responseDelete.then().log().all();
 		
-		Assert.assertEquals(responseDelete.getStatusCode(), 200);	
+		Assert.assertEquals(responseDelete.getStatusCode(), 200);
 	}
 	
 }
+
